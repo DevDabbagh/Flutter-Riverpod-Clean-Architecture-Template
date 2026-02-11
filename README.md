@@ -75,7 +75,7 @@ You **MUST** run these commands to generate the necessary files:
 # 1. Generate Models, Providers, and Assets
 dart run build_runner build --delete-conflicting-outputs
 
-# 2. Generate Native Splash Screen (from assets/images/logo.png)
+# 2. Generate Native Splash Screen (from assets/images/ic_logo.png)
 dart run flutter_native_splash:create
 ```
 
