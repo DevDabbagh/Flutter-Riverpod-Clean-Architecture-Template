@@ -8,7 +8,7 @@
 PRODUCT_NAME = flutter_clean_architecture_riverpod
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.antigravity.riverpod.flutterCleanArchitectureRiverpod
+PRODUCT_BUNDLE_IDENTIFIER = com.devdabbagh.flutterCleanArchitectureRiverpod
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.antigravity.riverpod. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.devdabbagh. All rights reserved.
