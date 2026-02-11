@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_const_declarations: true
+    prefer_final_locals: true
+    avoid_print: true
+    use_build_context_synchronously: true
+    always_use_package_imports: true
+    directives_ordering: true
+    implementation_imports: true
+    package_api_docs: true
+    public_member_api_docs: false 

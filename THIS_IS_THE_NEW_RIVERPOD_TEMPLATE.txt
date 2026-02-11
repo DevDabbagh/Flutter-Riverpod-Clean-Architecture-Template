@@ -1,0 +1,12 @@
+This is the NEW Flutter Riverpod Template Project.
+
+It follows the "App & Layers" structure (referencing GetX style).
+
+To define this as the new project, I have placed this file here.
+Please rename the parent folder manually if desired using your OS file explorer.
+
+Project Structure:
+- lib/app (Configuration, Core, Routing)
+- lib/layers (Domain, Data, Presentation)
+
+Run ./setup.sh to initialize iOS/Android folders!

@@ -1,0 +1,19 @@
+{
+  "appTitle": "قالب ريفر بود",
+  "@appTitle": {
+    "description": "عنوان التطبيق"
+  },
+  "postsTitle": "المنشورات",
+  "@postsTitle": {
+    "description": "عنوان صفحة المنشورات"
+  },
+  "error": "خطأ: {message}",
+  "@error": {
+    "description": "رسالة خطأ عامة",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  }
+}

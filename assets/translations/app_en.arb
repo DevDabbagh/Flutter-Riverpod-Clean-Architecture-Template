@@ -1,0 +1,19 @@
+{
+  "appTitle": "Flutter Riverpod Template",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "postsTitle": "Posts",
+  "@postsTitle": {
+    "description": "Title for the posts page"
+  },
+  "error": "Error: {message}",
+  "@error": {
+    "description": "Error message",
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  }
+}
