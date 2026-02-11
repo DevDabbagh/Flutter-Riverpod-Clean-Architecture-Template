@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../app/config/app_colors.dart';
-import '../../../../app/config/assets.dart';
+import '../../../../app/config/assets.gen.dart';
 import '../../domain/onboarding/entities/onboarding.dart';
 import 'onboarding_provider.dart';
 
@@ -16,16 +16,16 @@ class OnboardingPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 1. Watch Data
     final onboardingState = ref.watch(onboardingControllerProvider);
-    
+
     // 2. Watch UI State (Index)
     final currentIndex = ref.watch(onboardingIndexProvider);
-    
+
     // PageController (Local UI controller is fine, but we sync changes to Riverpod)
     // NOTE: In a pure stateless widget, creating PageController here means it resets on rebuild.
     // However, since we want to control it via riverpod for persistence or testing, we might need a StatefulConsumerWidget
-    // OR just instantiate it. 
+    // OR just instantiate it.
     // Actually, to avoid "ScrollController not attached" issues when rebuilding, using flutter_hooks is best,
-    // but without hooks, best to keep StatefulWidget for the PageController itself, OR 
+    // but without hooks, best to keep StatefulWidget for the PageController itself, OR
     // re-create it with initialPage: currentIndex is acceptable IF we don't animate externally often.
     // Let's use StatefulConsumerWidget to hold the PageController properly.
     return const _OnboardingPageBody();
@@ -36,7 +36,8 @@ class _OnboardingPageBody extends ConsumerStatefulWidget {
   const _OnboardingPageBody();
 
   @override
-  ConsumerState<_OnboardingPageBody> createState() => _OnboardingPageBodyState();
+  ConsumerState<_OnboardingPageBody> createState() =>
+      _OnboardingPageBodyState();
 }
 
 class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
@@ -68,9 +69,9 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (err, stack) => Center(child: Text("Error: $err")),
           data: (items) {
-             final isLastPage = currentIndex == items.length - 1;
+            final isLastPage = currentIndex == items.length - 1;
 
-             return Column(
+            return Column(
               children: [
                 // Top Bar with Language
                 Padding(
@@ -79,7 +80,10 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
+                          vertical: 6.h,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(20.r),
@@ -91,7 +95,10 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
                             SizedBox(width: 4.w),
                             Text(
                               "العربية",
-                              style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
@@ -110,7 +117,9 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
                     itemCount: items.length,
                     onPageChanged: (index) {
                       // Update Riverpod State
-                      ref.read(onboardingIndexProvider.notifier).setIndex(index);
+                      ref
+                          .read(onboardingIndexProvider.notifier)
+                          .setIndex(index);
                     },
                     itemBuilder: (context, index) {
                       return _buildPage(context, items[index]);
@@ -132,9 +141,9 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
                     expansionFactor: 3,
                   ),
                   onDotClicked: (index) => _pageController.animateToPage(
-                    index, 
-                    duration: const Duration(milliseconds: 300), 
-                    curve: Curves.easeInOut
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
                   ),
                 ),
 
@@ -142,7 +151,10 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
 
                 // Action Button
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 24.h,
+                  ),
                   child: SizedBox(
                     width: double.infinity,
                     height: 56.h,
@@ -150,7 +162,7 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
                       onPressed: () {
                         if (isLastPage) {
                           // Navigate to Auth or Home
-                           context.go('/posts'); 
+                          context.go('/posts');
                         } else {
                           _pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
@@ -197,11 +209,7 @@ class _OnboardingPageBodyState extends ConsumerState<_OnboardingPageBody> {
               color: AppColors.primaryTeal.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              item.icon,
-              size: 50.sp,
-              color: AppColors.primaryTeal,
-            ),
+            child: Icon(item.icon, size: 50.sp, color: AppColors.primaryTeal),
           ),
           SizedBox(height: 40.h),
           Text(

@@ -54,16 +54,41 @@ lib/
 
 ## 🚀 Getting Started
 
-### 1. Setup
-Run the setup script (or these commands) to fetch dependencies and generate the initial code.
+### 1. Prerequisites
+- Fluter SDK (3.0 or later)
+- Dart SDK (3.0 or later)
+- Android Studio / Xcode (for mobile development)
 
+### 2. Installation
+Clone the repo and install dependencies:
 ```bash
+git clone https://github.com/DevDabbagh/Flutter-Riverpod-Clean-Architecture-Template.git
+cd Flutter-Riverpod-Clean-Architecture-Template
 flutter pub get
-dart run build_runner build --delete-conflicting-outputs
 ```
 
-### 2. VS Code Extension (Recommended)
-Install **"Flutter Riverpod Snippets"** to easily create providers.
+### 3. Code Generation (Crucial Step)
+This project uses code generation for Riverpod, Retrofit, JSON, Assets, and Localization.
+You **MUST** run these commands to generate the necessary files:
+
+```bash
+# 1. Generate Models, Providers, and Assets
+dart run build_runner build --delete-conflicting-outputs
+
+# 2. Generate Native Splash Screen (from assets/images/logo.png)
+dart run flutter_native_splash:create
+```
+
+*Note: If you see errors about missing `Assets` or `AppLocalizations` classes, running the above commands will fix them.*
+
+### 4. Running the App
+```bash
+flutter run
+```
+
+### 5. VS Code Extensions (Recommended)
+- **Flutter Riverpod Snippets**: For easy provider creation.
+- **Dart Data Class Generator**: For generating copyWith, toMap, etc (if not using freezed).
 
 ---
 
@@ -135,7 +160,8 @@ GoRoute(
 -   **Colors**: Always use `AppColors` (e.g., `AppColors.primaryTeal`). **Do not** hardcode hex colors.
 -   **Sizing**: Use `.w`, `.h`, `.sp` from ScreenUtil (e.g., `20.w`, `16.sp`).
 -   **Text**: Use `Theme.of(context).textTheme` styles (e.g., `displayMedium`, `bodyLarge`).
--   **Assets**: Add images to `assets/images/` and register them in `lib/app/config/assets.dart`.
+-   **Assets**: Add images to `assets/images/` and run `dart run build_runner build` to generating `Assets.gen.dart`.
+    -   Usage: `Assets.images.logo.image()` or `Assets.images.icon.svg()`.
 
 ---
 

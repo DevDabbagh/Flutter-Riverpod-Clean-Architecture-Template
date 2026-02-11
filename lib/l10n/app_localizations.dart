@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// The title of the application
   ///
   /// In en, this message translates to:
-  /// **'Riverpod Clean Arch'**
+  /// **'Flutter Riverpod Template'**
   String get appTitle;
 
   /// Title for the posts page

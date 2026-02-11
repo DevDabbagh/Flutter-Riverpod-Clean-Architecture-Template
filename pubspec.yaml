@@ -49,6 +49,21 @@ dev_dependencies:
   retrofit_generator: 9.1.2
   json_serializable: ^6.7.1
   json_annotation: ^4.8.1
+  flutter_gen_runner: ^5.4.0
+  flutter_native_splash: ^2.4.0
+
+flutter_gen:
+  output: lib/app/config/
+  line_length: 80
+  integrations:
+    flutter_svg: true
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/ic_logo.png
+  android_12:
+    image: assets/images/ic_logo.png
+    color: "#FFFFFF"
 
 flutter:
   uses-material-design: true
