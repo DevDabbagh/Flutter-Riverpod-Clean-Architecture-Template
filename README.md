@@ -179,8 +179,10 @@ GoRoute(
 This usually happens if dependencies are out of sync. We use the latest versions (Riverpod 3, Retrofit Generator 10).
 Run:
 ```bash
+
 flutter pub upgrade
 dart run build_runner build --delete-conflicting-outputs
+
 ```
 
 Happy Coding! 💙
