@@ -55,9 +55,12 @@ lib/
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
-- Fluter SDK (3.0 or later)
+- Flutter SDK (3.0 or later)
 - Dart SDK (3.0 or later)
 - Android Studio / Xcode (for mobile development)
+
+> **✨ One-Click Setup Available!**  
+> Once you have the prerequisites, you can set up the entire project with a single command (see below).
 
 ### 2. Installation
 Clone the repo and install dependencies:
