@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/images/logo.png" width="200" alt="Flutter Riverpod Clean Architecture Template" />
+</p>
+
 # 🚀 Flutter Riverpod Clean Architecture Template
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/DevDabbagh/Flutter-Riverpod-Clean-Architecture-Template)
