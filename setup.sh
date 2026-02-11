@@ -1,21 +1,22 @@
 #!/bin/bash
 
-# Flutter Project Setup Script
-# Run this script to generate platform folders (iOS, Android) and build runner files.
+echo "🚀 Starting Project Setup..."
 
-echo "🚀 Setting up Flutter Riverpod Clean Architecture Project..."
-
-# 1. Generate Platform Folders (iOS, Android, Web, etc.)
-echo "📱 Generating iOS and Android folders..."
-flutter create . --org com.antigravity.riverpod
+# 1. Clean Project
+echo "🧹 Cleaning project..."
+flutter clean
 
 # 2. Get Dependencies
-echo "📦 Installing dependencies..."
+echo "📦 Fetching dependencies..."
 flutter pub get
 
-# 3. Generate Code (Riverpod, JSON, Retrofit)
-echo "🏗️  Running Build Runner..."
+# 3. Generate Code (Riverpod, Retrofit, Assets, JSON)
+echo "🏗️  Running Build Runner (this might take a while)..."
 dart run build_runner build --delete-conflicting-outputs
 
-echo "✅ Setup Complete! You can now run the app with:"
-echo "   flutter run"
+# 4. Generate Splash Screen
+echo "💦 Generating Splash Screen..."
+dart run flutter_native_splash:create
+
+echo "✅ Setup Complete! You can now run the app:"
+echo "flutter run"
